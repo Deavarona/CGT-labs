@@ -6,92 +6,77 @@ public class Main {
 
     private static final String CIPHER_1 = "Srobdoskdehwlf vxevwlwxwlrq flskhuv";
     private static final String CIPHER_2 = "KjgyVgkcVWZqdX nsWnqdqsqdji XdkcZmn";
+    private static final ArrayList<Character> ALPHABET = createAlphabet();
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        //Создание алфавита
-        ArrayList<Character> alphabet = new ArrayList<>();
-        createAlphabet(alphabet);
-
-        //Создание алфавита-ключа для шифра
-        ArrayList<Character> cipherAlphabet = new ArrayList<>();
-        createAlphabet(cipherAlphabet);
-
         //Шифр 1
         ArrayList<Character> msg1 = convertToArrayList(CIPHER_1);
         printArray("Original message: ", msg1);
-        cesarDecryption(cipherAlphabet, msg1);
-        System.out.println();
-
-        //Вывод алфавита и ключа
-        printArray("Original alphabet: ", alphabet);
-        printArray("Final alphabet: ", cipherAlphabet);
+        System.out.println("Key: "+searchCesarCipherKey(msg1));
         System.out.println();
 
         //Шифр 2
         ArrayList<Character> msg2 = convertToArrayList(CIPHER_2.toLowerCase());
         printArray("Original message: ", msg2);
-
-
-
-        ArrayList<Character> omgzaebalo = convertToArrayList(CIPHER_2.toLowerCase());
-        oneToOneSubstitutionCipher(cipherAlphabet, alphabet, msg2);
+        ArrayList<Character> cipherKey = searchOneToOneSubstitutionKey(msg2);
         System.out.println();
 
-        //Вывод ключа и сообщения
-        printArray("Result alphabet: ", cipherAlphabet);
-        printArray("Result message: ", msg2);
+        //Вывод алфавита и ключа
+        printArray("Key alphabet: ", cipherKey);
+        printArray("Result message: ", decryptOneToOneSubstitution(cipherKey, msg2));
+        switchCipherKeyLetters(cipherKey, msg2);
 
+
+        scanner.close();
+    }
+
+    public static void switchCipherKeyLetters(ArrayList<Character> cipherAlphabet, ArrayList<Character> message){
         boolean isExit=false;
         while(!isExit){
             System.out.print("First letter: ");
             char letter1 = scanner.next().charAt(0);
             System.out.print("Second letter: ");
             char letter2 = scanner.next().charAt(0);
-            Collections.swap(cipherAlphabet, cipherAlphabet.indexOf(letter1), cipherAlphabet.indexOf(letter2));
+            Collections.swap(cipherAlphabet, ALPHABET.indexOf(letter1), ALPHABET.indexOf(letter2));
             printArray("Result alphabet: ", cipherAlphabet);
-
-            for(int i=0; i<msg2.size(); i++){
-                if(msg2.get(i) != ' ')
-                    msg2.set(i, alphabet.get(cipherAlphabet.indexOf(omgzaebalo.get(i))));
-            }
-
-            printArray("Result message: ", msg2);
+            printArray("Result message: ", decryptOneToOneSubstitution(cipherAlphabet, message));
             System.out.print("Press 0 to exit. Input: ");
             if(scanner.next().equals("0")){
                 isExit=true;
             }
         }
-
-        scanner.close();
     }
 
-    public static void oneToOneSubstitutionCipher(ArrayList<Character> cipherAlphabet, ArrayList<Character> alphabet, ArrayList<Character> message){
-        ArrayList<Character> decryptedMessage = new ArrayList<>(message);
+    public static ArrayList<Character> searchOneToOneSubstitutionKey(ArrayList<Character> message){
+        ArrayList<Character> cipherAlphabet = createAlphabet();
         boolean isExit = false;
         while(!isExit) {
             shiftToRightByAlphabet(cipherAlphabet);
-            for(int i=0; i<message.size(); i++){
-                if(message.get(i) != ' '){
-                    decryptedMessage.set(i, alphabet.get(cipherAlphabet.indexOf(message.get(i))));
-                }
-            }
-            printArray("Decrypted message: ", decryptedMessage);
+            printArray("Decrypted message: ", decryptOneToOneSubstitution(cipherAlphabet, message));
             System.out.print("Press 0 to exit. Input: ");
             if(scanner.next().equals("0")){
                 isExit=true;
             }
         }
-        message.removeAll(message);
-        message.addAll(decryptedMessage);
+        return cipherAlphabet;
     }
 
-    public static void cesarDecryption(ArrayList<Character> alphabet, ArrayList<Character> message){
+    public static ArrayList<Character> decryptOneToOneSubstitution(ArrayList<Character> cipherAlphabet, ArrayList<Character> message){
+        ArrayList<Character> decryptedMessage = new ArrayList<>(message);
+        for(int i=0; i<message.size(); i++){
+            if(message.get(i) != ' '){
+                decryptedMessage.set(i, ALPHABET.get(cipherAlphabet.indexOf(message.get(i))));
+            }
+        }
+        return decryptedMessage;
+    }
+
+    public static int searchCesarCipherKey(ArrayList<Character> message){
         int key = 0;
         boolean isExit = false;
         while(!isExit) {
             shiftToRightByAlphabet(message);
-            shiftToRightByAlphabet(alphabet);
             key++;
             printArray("Message: ", message);
             System.out.print("Press 0 to exit. Input: ");
@@ -99,13 +84,15 @@ public class Main {
                 isExit=true;
             }
         }
-        System.out.println("Key: "+ key);
+        return key;
     }
 
-    public static void createAlphabet(ArrayList<Character> alphabet){
+    public static ArrayList<Character> createAlphabet(){
+        ArrayList<Character> alphabet = new ArrayList<>();
         for (char ch = 'a'; ch <='z'; ch++){
             alphabet.add(ch);
         }
+        return alphabet;
     }
 
     public static void printArray(String text, ArrayList<Character> array){
