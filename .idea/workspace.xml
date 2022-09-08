@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="343b0ea0-735d-4af3-94da-0bedd9dc7cde" name="Changes" comment="One-to-one Substitution Cipher">
+    <list default="true" id="343b0ea0-735d-4af3-94da-0bedd9dc7cde" name="Changes" comment="Task 2: encrypt name">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/lab1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/lab1/Main.java" afterDir="false" />
     </list>
@@ -82,7 +82,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662648835194</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Task 2: encrypt name">
+      <created>1662650026711</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1662650026711</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -99,6 +106,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Cesar decryption" />
     <MESSAGE value="One-to-one Substitution Cipher" />
-    <option name="LAST_COMMIT_MESSAGE" value="One-to-one Substitution Cipher" />
+    <MESSAGE value="Task 2: encrypt name" />
+    <option name="LAST_COMMIT_MESSAGE" value="Task 2: encrypt name" />
   </component>
 </project>

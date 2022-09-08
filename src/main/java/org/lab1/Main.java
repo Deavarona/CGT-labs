@@ -39,14 +39,8 @@ public class Main {
         int key = 7;
         ArrayList<Character> nameCipher = encryptCesarCipher(convertToArrayList(name), key);
         printArray("Encrypted name: ", nameCipher);
-        ArrayList<Character> nameDecipher = decryptCesarCipher(nameCipher, key);
-        printArray("Decrypted name: ", nameDecipher);
-        if(nameDecipher.equals(convertToArrayList(name))){
-            printArray(name+" is equal to ", nameDecipher);
-        } else {
-            printArray(name+" is not equal to ", nameDecipher);
-        }
-
+        //ArrayList<Character> nameDecipher = decryptCesarCipher(nameCipher, key);
+        System.out.println("Found key: "+searchCesarCipherKey(nameCipher));
     }
 
     public static ArrayList<Character> decryptCesarCipher(ArrayList<Character> message, int key){
