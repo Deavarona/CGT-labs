@@ -10,6 +10,12 @@ public class Main {
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
+        //task1();
+        task2();
+        scanner.close();
+    }
+
+    public static void task1(){
         //Шифр 1
         ArrayList<Character> msg1 = convertToArrayList(CIPHER_1);
         printArray("Original message: ", msg1);
@@ -26,9 +32,50 @@ public class Main {
         printArray("Key alphabet: ", cipherKey);
         printArray("Result message: ", decryptOneToOneSubstitution(cipherKey, msg2));
         switchCipherKeyLetters(cipherKey, msg2);
+    }
 
+    public static void task2(){
+        String name = "Sharupich Kseniya Andreevna";
+        int key = 7;
+        ArrayList<Character> nameCipher = encryptCesarCipher(convertToArrayList(name), key);
+        printArray("Encrypted name: ", nameCipher);
+        ArrayList<Character> nameDecipher = decryptCesarCipher(nameCipher, key);
+        printArray("Decrypted name: ", nameDecipher);
+        if(nameDecipher.equals(convertToArrayList(name))){
+            printArray(name+" is equal to ", nameDecipher);
+        } else {
+            printArray(name+" is not equal to ", nameDecipher);
+        }
 
-        scanner.close();
+    }
+
+    public static ArrayList<Character> decryptCesarCipher(ArrayList<Character> message, int key){
+        ArrayList<Character> msg = new ArrayList<>(message);
+        for(int i=0; i<key; i++){
+            shiftToRightByAlphabet(msg);
+        }
+        return msg;
+    }
+    public static ArrayList<Character> encryptCesarCipher(ArrayList<Character> message, int key){
+        ArrayList<Character> msg = new ArrayList<>(message);
+        for(int i =0; i<key; i++){
+            shiftToLeftByAlphabet(msg);
+        }
+        return msg;
+    }
+
+    public static void shiftToLeftByAlphabet(ArrayList<Character> array){
+        char temp;
+        for(int i=0; i<array.size(); i++){
+            temp=array.get(i);
+            if(temp == 'z' || temp == 'Z'){
+                if(temp == 'z') temp = 'a';
+                else temp = 'A';
+            } else if(temp != ' '){
+                temp++;
+            }
+            array.set(i, temp);
+        }
     }
 
     public static void switchCipherKeyLetters(ArrayList<Character> cipherAlphabet, ArrayList<Character> message){
