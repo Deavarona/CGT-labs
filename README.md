@@ -1,8 +1,8 @@
-# Cryptographic Technologies, BSUIR, 4th year
+# Cryptographic Technologies
 
 ## Lab 1. Caesar cipher. One-to-one substitution cipher.
 
-The task is located in [KG_PZ_1.pdf](https://github.com/Kkotto/CGT-lab-1/blob/master/KG_PZ_1.pdf) file.
+The task is located in [KG_PZ_1.pdf](https://github.com/Kkotto/CGT-labs/blob/master/tasks/KG_PZ_1.pdf) file.
 
 Task 1. Write a decryption program to find the plaintext by breaking the Caesar cipher; 
 find the key of the one-to-one substitution cipher, using the found plaintext.
@@ -11,7 +11,7 @@ Task 2. Write a program to encrypt the full name, decrypt the received text. Com
 
 ## Lab 2. Transposition cipher. Playfair cipher.
  
-The task is located in [KG_PZ_2.pdf](https://github.com/Kkotto/CGT-labs/blob/master/src/main/tasks/lab-2/KG_PZ_2.pdf) file.
+The task is located in [KG_PZ_2.pdf](https://github.com/Kkotto/CGT-labs/blob/master/tasks/KG_PZ_2.pdf) file.
  
  Task 1. Find key of Playfair cipher.
  
@@ -21,8 +21,21 @@ The task is located in [KG_PZ_2.pdf](https://github.com/Kkotto/CGT-labs/blob/mas
  
  ## Lab 3. XOR cipher.
  
-The task is located in [KG_PZ_3.pdf](https://github.com/Kkotto/CGT-labs/blob/master/src/main/tasks/lab-3/KG_PZ_3.pdf) file.
+The task is located in [KG_PZ_3.pdf](https://github.com/Kkotto/CGT-labs/blob/master/tasks/KG_PZ_3.pdf) file.
 
 Task 1. Encrypt message with a gamma-key.
 
 Task 2. Decrypt result with the same gamma-key.
+
+## Lab 4. PGP.
+
+The task is located in [KG_PZ_3.pdf](https://github.com/Kkotto/CGT-labs/blob/master/tasks/KG_PZ_4.pdf) file.
+
+Task 1. Convert 3^43 to the binary system.
+
+Task 2. Convert the alphabet to binary values from 0000(2) to 1111(2) and covert the message according to the binary alphabet 
+to the binary code.
+
+Task 3. Shift digits of the binary code of the number.
+
+Task 4. Find XOR of 2 values.
