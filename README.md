@@ -1,5 +1,7 @@
 # Cryptographic Technologies
 
+[![wakatime](https://wakatime.com/badge/user/f7dbe84c-6f3c-42e2-b6ac-fcc958d0eabb/project/36f133ec-a4cd-4d28-be1b-651ae31a59ad.svg)](https://wakatime.com/badge/user/f7dbe84c-6f3c-42e2-b6ac-fcc958d0eabb/project/36f133ec-a4cd-4d28-be1b-651ae31a59ad)
+
 ## Lab 1. Caesar cipher. One-to-one substitution cipher.
 
 The task is located in [KG_PZ_1.pdf](https://github.com/Kkotto/CGT-labs/blob/master/tasks/KG_PZ_1.pdf) file.
