@@ -1,5 +1,6 @@
 # Cryptographic Technologies
 
+[![wakatime](https://wakatime.com/badge/github/Kkotto/CGT-labs.svg)](https://wakatime.com/badge/github/Kkotto/CGT-labs)
 [![wakatime](https://wakatime.com/badge/user/f7dbe84c-6f3c-42e2-b6ac-fcc958d0eabb/project/36f133ec-a4cd-4d28-be1b-651ae31a59ad.svg)](https://wakatime.com/badge/user/f7dbe84c-6f3c-42e2-b6ac-fcc958d0eabb/project/36f133ec-a4cd-4d28-be1b-651ae31a59ad)
 
 ## Lab 1. Caesar cipher. One-to-one substitution cipher.
